@@ -95,7 +95,6 @@ body {
 /* App Container */
 .app-container {
   position: relative;
-  z-index: 10;
   display: flex;
   height: 100vh;
   padding: 24px;
@@ -330,6 +329,8 @@ body {
   overflow-y: auto;
   border-radius: 24px;
   padding: 0 12px 24px 0; /* space for scrollbar */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Custom Scrollbar */
@@ -900,6 +901,12 @@ body {
 @media (max-width: 1024px) {
   .app-container {
     padding: 12px;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .content-body {
+    overflow-y: visible;
   }
   
   .sidebar {
