@@ -317,7 +317,12 @@ document.addEventListener('DOMContentLoaded', () => {
       prevBtn.className = 'page-btn';
       prevBtn.textContent = 'BACK';
       prevBtn.disabled = state.quizPage === 0;
-      prevBtn.onclick = () => { state.quizPage--; renderContentBody(); els.contentBody.scrollTo({top:0, behavior:'smooth'}); };
+      prevBtn.onclick = () => { 
+        state.quizPage--; 
+        renderContentBody(); 
+        els.contentBody.scrollTo({top:0, behavior:'smooth'}); 
+        window.scrollTo({top:0, behavior:'smooth'}); 
+      };
 
       const info = document.createElement('span');
       info.className = 'page-info';
@@ -327,7 +332,12 @@ document.addEventListener('DOMContentLoaded', () => {
       nextBtn.className = 'page-btn';
       nextBtn.textContent = 'NEXT';
       nextBtn.disabled = state.quizPage === totalPages - 1;
-      nextBtn.onclick = () => { state.quizPage++; renderContentBody(); els.contentBody.scrollTo({top:0, behavior:'smooth'}); };
+      nextBtn.onclick = () => { 
+        state.quizPage++; 
+        renderContentBody(); 
+        els.contentBody.scrollTo({top:0, behavior:'smooth'}); 
+        window.scrollTo({top:0, behavior:'smooth'}); 
+      };
 
       pag.appendChild(prevBtn);
       pag.appendChild(info);
