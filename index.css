@@ -55,15 +55,15 @@ body {
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
   opacity: 0.5;
   animation: float 20s infinite ease-in-out;
+  will-change: transform; /* Hardware acceleration */
 }
 
 .orb-1 {
   width: 600px;
   height: 600px;
-  background: rgba(59, 130, 246, 0.15); /* Blue */
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(59, 130, 246, 0) 70%);
   top: -100px;
   left: -100px;
 }
@@ -71,7 +71,7 @@ body {
 .orb-2 {
   width: 500px;
   height: 500px;
-  background: rgba(139, 92, 246, 0.15); /* Purple */
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(139, 92, 246, 0) 70%);
   bottom: -50px;
   right: -50px;
   animation-delay: -5s;
@@ -80,7 +80,7 @@ body {
 .orb-3 {
   width: 400px;
   height: 400px;
-  background: rgba(16, 185, 129, 0.1); /* Emerald */
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0) 70%);
   top: 40%;
   left: 30%;
   animation-delay: -10s;
