@@ -878,27 +878,130 @@ body {
   text-transform: uppercase;
 }
 
+/* Sidebar Overlay */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Responsive Overrides */
 @media (max-width: 1024px) {
   .app-container {
-    flex-direction: column;
-    padding: 16px;
-    gap: 16px;
+    padding: 12px;
   }
   
   .sidebar {
-    width: 100%;
-    height: auto;
-    max-height: 50vh;
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 320px;
+    height: 100vh;
+    z-index: 50;
+    border-radius: 0 24px 24px 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
   }
   
+  .menu-toggle {
+    display: block;
+    padding: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
   .app-header {
-    flex-wrap: wrap;
+    padding: 16px;
     gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
   }
   
+  .header-title {
+    font-size: 1.5rem;
+    align-self: center; /* Center the title explicitly */
+  }
+
   .stats-container {
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .stat-pill {
+    min-width: 0;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .controls-bar {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .progress-container {
+    margin-right: 0;
+  }
+
+  .controls-actions {
+    display: flex;
     justify-content: space-between;
+  }
+
+  .btn-glass {
+    flex: 1;
+    text-align: center;
+  }
+
+  .question-card {
+    padding: 24px 16px;
+  }
+
+  .option-btn {
+    padding: 12px 16px;
+    flex-wrap: wrap; /* allows text to drop below icon if very tight */
+  }
+
+  .flashcard-face {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .flashcard-question {
+    font-size: 1.3rem;
+  }
+
+  .flashcard-answer {
+    font-size: 1.5rem;
+  }
+
+  .creator-watermark {
+    bottom: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    font-size: 0.65rem;
+  }
+
+  .fc-btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
   }
 }

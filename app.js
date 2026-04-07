@@ -67,12 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     els.menuToggle.addEventListener('click', () => {
-        els.sidebar.style.display = els.sidebar.style.display === 'none' ? 'flex' : 'none';
+        els.sidebar.classList.toggle('open');
         els.sidebarOverlay.classList.toggle('show');
     });
 
     els.sidebarOverlay.addEventListener('click', () => {
-        els.sidebar.style.display = 'none';
+        els.sidebar.classList.remove('open');
         els.sidebarOverlay.classList.remove('show');
     });
   }
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', () => {
           selectSubject(subjName);
           if (window.innerWidth <= 1024) {
-              els.sidebar.style.display = 'none';
+              els.sidebar.classList.remove('open');
               els.sidebarOverlay.classList.remove('show');
           }
       });
