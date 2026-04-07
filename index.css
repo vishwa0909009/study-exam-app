@@ -915,7 +915,7 @@ body {
     position: fixed;
     top: 0; left: 0; bottom: 0;
     width: 320px;
-    height: 100vh;
+    height: 100dvh; /* Use dynamic viewport height to prevent address bar crop */
     z-index: 50;
     border-radius: 0 24px 24px 0;
     transform: translateX(-100%);
