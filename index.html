@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comprehensive Exam - Interactive Study App</title>
+  <meta name="description" content="A comprehensive quiz and flashcard app for mastering computer science subjects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Modern Geometric Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="app-background">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  
+  <div class="app-container">
+    <aside class="sidebar glass-panel" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          COMPREHENSIVE<br/><span class="logo-accent">EXAM</span>
+        </div>
+      </div>
+      
+      <nav id="subject-list" class="subject-list">
+        <!-- Subjects dynamically populated here -->
+      </nav>
+      
+      <div class="sidebar-footer">
+        <div class="mode-toggle">
+          <button class="mode-btn active" id="mode-quiz" data-mode="quiz">
+            <span class="mode-icon">⚡</span> QUIZ
+          </button>
+          <button class="mode-btn" id="mode-flash" data-mode="flash">
+            <span class="mode-icon">🎴</span> FLASH
+          </button>
+        </div>
+        <button class="reset-btn" id="reset-subject">↺ Reset Progress</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="app-header glass-panel">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        
+        <div class="header-title" id="header-title">
+          <!-- Subject Title dynamically populated -->
+        </div>
+
+        <div class="stats-container">
+          <div class="stat-pill">
+            <span class="stat-label">TOTAL</span>
+            <span class="stat-value" id="stat-total">0</span>
+          </div>
+          <div class="stat-pill stat-correct">
+            <span class="stat-label">CORRECT</span>
+            <span class="stat-value" id="stat-correct">0</span>
+          </div>
+          <div class="stat-pill stat-wrong">
+            <span class="stat-label">WRONG</span>
+            <span class="stat-value" id="stat-wrong">0</span>
+          </div>
+          <div class="stat-pill stat-score">
+            <span class="stat-label">SCORE</span>
+            <span class="stat-value" id="stat-score">—</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-body" id="content-body">
+        <!-- Main content dynamically populated here -->
+      </div>
+    </main>
+  </div>
+  
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- Creator Watermark -->
+  <div class="creator-watermark">
+    Built by <span>Vishwaganesan</span>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
