@@ -899,6 +899,10 @@ body {
 
 /* Responsive Overrides */
 @media (max-width: 1024px) {
+  body {
+    overflow: auto;
+  }
+
   .app-container {
     padding: 12px;
     height: auto;
